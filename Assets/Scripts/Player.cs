@@ -9,6 +9,34 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float jumpForce;
 
+    private Controls controls;
+
+    private void OnEnable()
+    {
+        controls = new Controls();
+        controls.Enable();
+        controls.Main.MoveLR.performed += MoveLROnPerformed;
+        controls.Main.MoveLR.canceled += MoveLROnCanceled;
+        controls.Main.Jump.performed += JumpOnPerformed;
+    }
+
+    //Demande si le player se déplace
+    private void MoveLROnPerformed(InputAction.CallbackContext obj)
+    {
+
+    }
+
+    //Demande si le player arrête de se déplacer
+    private void MoveLROnCanceled(InputAction.CallbackContext obj)
+    {
+
+    }
+
+    //Demande si le player saute
+    private void JumpOnPerformed(InputAction.CallbackContext obj)
+    {
+
+    }
 
     // Start is called before the first frame update
     void Start()
