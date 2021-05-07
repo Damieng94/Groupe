@@ -5,9 +5,17 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    //Variable modifiable dans l'inspector (vitesse, vitesse maximale, force du saut)
     [SerializeField] private float speed;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float jumpForce;
+
+    private float diection;
+
+    private Rigidbody2D body2D;
+
+    private SpriteRenderer spriterenderer;
+
 
     private Controls controls;
 
